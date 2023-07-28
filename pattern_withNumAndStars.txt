@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+void recur(int trr,int row){
+	//base case
+	if(row>trr){
+		return;
+	}
+	// recursive case
+	for(int i =0;i<row;i++){
+		cout<<i+1;
+	}
+	for(int i =0;i<trr-row;i++){
+		cout<<"*";
+	}
+	cout<<endl;
+
+	recur(trr,row+1);
+}
+
+
+
+int main() {
+	int trr;
+	cin>>trr;
+	int row =1;
+	recur(trr,row);
+
+	return 0;
+}
