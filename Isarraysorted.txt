@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+bool Isorted(int arr[],int n , int index){
+	if (index<=0){
+		return true;
+	}
+	bool sorted = true;
+	int max = arr[index];
+	for(int i=0;i<=index;i++){
+		if (arr[i]>max){
+			sorted = false;
+			break;
+		}
+	}
+	if (sorted){
+	return (arr,n,index-1);
+	}
+	else{
+		return false;
+	}
+}
+int main() {
+	int n;
+	cin>>n;
+	int arr[n];
+	for(int i =0 ; i<n;i++){
+		cin>>arr[i];
+	}
+	bool ans = Isorted(arr,n,n-1);
+	cout<<(ans ? "true" : "false");
+	return 0;
+}

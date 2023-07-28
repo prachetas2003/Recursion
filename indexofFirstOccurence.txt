@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int findFirstIndex(int arr[], int size, int target, int current_index) {
+    if (current_index >= size) {
+        return -1; // target not found in the array
+    }
+
+    if (arr[current_index] == target) {
+        return current_index; // first index where target is found
+    }
+
+    return findFirstIndex(arr, size, target, current_index + 1);
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int m;
+    cin >> m;
+
+    int ans = findFirstIndex(arr, n, m, 0);
+    cout << ans << endl;
+
+    return 0;
+}
